@@ -1,0 +1,20 @@
+{
+  "name": "tablebooking",
+  "version": "1.0.0",
+  "description": "Table booking system",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Raju Gogula",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.3",
+    "mongoose": "^5.0.00"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
