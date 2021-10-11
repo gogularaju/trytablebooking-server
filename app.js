@@ -35,10 +35,12 @@ app.use('/tables', TableRoute);
 app.use('/menu', MenuRoute);
 
 //Server Init
-app.listen(8080, () => {
-    console.log('Server started...')
-});
+app.set('port', (process.env.PORT || 8080));
 
+// Start node server
+app.listen(app.get('port'), function() {
+   console.log('Node server is running on port ' + app.get('port'));
+});
 
 
 
