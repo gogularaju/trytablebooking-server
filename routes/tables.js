@@ -20,7 +20,7 @@ router.get('/:id', async(req, res) => {
     }
 });
 
-router.post('/newTable', async(req, res) => {
+router.post('/new-table', async(req, res) => {
     try {
         const { tableNumber, reservationStatus, cost, totalCost } = req.body;
         const table = new Table({

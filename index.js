@@ -5,6 +5,8 @@ const { baseURL, restURL, database } = require('./config');
 //Import routers
 const TableRoute = require('./routes/tables');
 const MenuRoute = require('./routes/menu');
+const OrderRoute = require('./routes/orders');
+
 
 
 //App init
@@ -31,8 +33,10 @@ con.on('close', () => {
 app.use(express.json());
 
 //Routers
+//app.use('/', TableRoute);
 app.use('/tables', TableRoute);
 app.use('/menu', MenuRoute);
+app.use('/orders', OrderRoute);
 
 //Server Init
 const PORT = process.env.PORT || 5000;

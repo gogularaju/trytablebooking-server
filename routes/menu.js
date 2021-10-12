@@ -11,7 +11,7 @@ router.get('/', async(req, res) => {
     }
 });
 
-router.post('/newMenu', async(req, res) => {
+router.post('/new-menu', async(req, res) => {
     try {
         const { biryanis, breads, curries, softdrinks } = req.body;
         const menu = new Menu({
