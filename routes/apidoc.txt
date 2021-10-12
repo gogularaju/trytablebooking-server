@@ -1,0 +1,48 @@
+
+APIS:
+
+Base URL: https://trytablebooking.herokuapp.com/
+
+Tables:
+    1) GET: https://trytablebooking.herokuapp.com/tables
+         Description: To get all the tables data
+    2) GET: https://trytablebooking.herokuapp.com/tables/<id>
+         Description: To get a table data by id
+    3) POST: https://trytablebooking.herokuapp.com/tables/new-table
+         Description: create a table
+         Payload: {
+             tableNumber: <String>,
+             reservationStatus: <String>,
+             cost: <String>,
+             totalCost: <String>
+         }
+    4) PATCH: https://trytablebooking.herokuapp.com/tables/<id>
+         Description: edit the record using id
+    5) DELETE: https://trytablebooking.herokuapp.com/tables/<id>
+         Description: To delete a record in the table using id   
+
+
+Menu:
+
+    1) GET: https://trytablebooking.herokuapp.com/menu
+         Description: To get all the menu data
+    2) POST: https://trytablebooking.herokuapp.com/menu/new-menu
+         Description: create a menu
+         Payload: {
+             biryanis: <Array>,
+             breads: <Array>,
+             curries: <Array>,
+             softdrinks: <Array>
+         }
+
+Orders:
+     1) GET: https://trytablebooking.herokuapp.com/order
+         Description: To get all the orders
+     2) POST: https://trytablebooking.herokuapp.com/menu/new-order
+         Description: create a new order
+         Payload: {
+             status: <String>,
+             orderNumber: <String>,
+             tableNumber: <String>,
+             orderItems: <Array>
+         }
