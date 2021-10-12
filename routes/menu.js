@@ -7,7 +7,7 @@ router.get('/', async(req, res) => {
         const response = await Menu.find();
         res.json(response);
     } catch(e) {
-        res.send('Error')
+        res.send(e)
     }
 });
 
