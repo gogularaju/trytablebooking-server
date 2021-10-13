@@ -3,6 +3,8 @@ APIS:
 
 Base URL: https://trytablebooking.herokuapp.com/
 
+Collections
+====================
 Tables:
     1) GET: https://trytablebooking.herokuapp.com/tables
          Description: To get all the tables data
@@ -36,7 +38,7 @@ Menu:
          }
 
 Orders:
-     1) GET: https://trytablebooking.herokuapp.com/order
+     1) GET: https://trytablebooking.herokuapp.com/orders
          Description: To get all the orders
      2) POST: https://trytablebooking.herokuapp.com/menu/new-order
          Description: create a new order
