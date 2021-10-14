@@ -12,7 +12,7 @@ const tableSchema = new mongoose.Schema({
     },
     cost: {
         type: String,
-        required: true
+        required: false
     },
     totalCost: {
         type: String,

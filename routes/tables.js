@@ -40,6 +40,7 @@ router.patch('/:id', async(req, res) => {
     try {
         const table = await Table.findById(req.params.id);
         table.reservationStatus = req.body.reservationStatus;
+        table.totalCost = req.body.totalCost;
         const result = await table.save();
         res.json(result);
     } catch(e) {

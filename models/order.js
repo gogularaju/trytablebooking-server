@@ -21,6 +21,10 @@ const orderSchema = new mongoose.Schema({
     orderCost: {
         type: String,
         required: true
+    },
+    orderDateTime: {
+        type: String,
+        require: false
     }
 })
 

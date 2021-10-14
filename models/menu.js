@@ -4,19 +4,27 @@ const mongoose = require('mongoose');
 const menuSchema = new mongoose.Schema({
     biryanis: {
         type: Array,
-        required: true
+        required: false
     },
     breads: {
         type: Array,
-        required: true
+        required: false
     },
     curries: {
         type: Array,
-        required: true
+        required: false
     },
     softdrinks: {
         type: Array,
-        required: true
+        required: false
+    },
+    starters: {
+        type: Array,
+        required: false
+    },
+    soups: {
+        type: Array,
+        required: false
     }
 })
 

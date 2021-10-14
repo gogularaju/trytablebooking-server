@@ -13,12 +13,14 @@ router.get('/', async(req, res) => {
 
 router.post('/new-menu', async(req, res) => {
     try {
-        const { biryanis, breads, curries, softdrinks } = req.body;
+        const { biryanis, breads, curries, softdrinks, starters, soups } = req.body;
         const menu = new Menu({
             biryanis,
             breads,
             curries,
-            softdrinks
+            softdrinks,
+            starters,
+            soups
         });
         const response = await menu.save();
         res.json(response);

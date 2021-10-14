@@ -18,13 +18,14 @@ router.get('/', async(req, res) => {
 
 router.post('/new-order', async(req, res) => {
     try {
-        const { status = 'Pending', tableNumber, orderItems, orderCost } = req.body;
+        const { status, tableNumber, orderItems, orderCost, orderDateTime } = req.body;
         const order = new Order({
             status,
             orderNumber: generateRandomOrderNumber(),
             tableNumber,
             orderItems,
-            orderCost
+            orderCost,
+            orderDateTime
         });
         const response = await order.save();
         res.json(response);
