@@ -27,7 +27,8 @@ router.post('/new-table', async(req, res) => {
             tableNumber,
             reservationStatus,
             cost,
-            totalCost
+            totalCost,
+            orderResponse: {}
         });
         const response = await table.save();
         res.json(response);
@@ -41,8 +42,7 @@ router.patch('/:id', async(req, res) => {
         const table = await Table.findById(req.params.id);
         table.reservationStatus = req.body.reservationStatus;
         table.totalCost = req.body.totalCost;
-        table.orderNumber = req.body.orderNumber;
-        table.orderId = req.body.orderId;
+        table.orderResponse = req.body.orderResponse || {};
         const result = await table.save();
         res.json(result);
     } catch(e) {

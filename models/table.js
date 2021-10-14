@@ -18,12 +18,8 @@ const tableSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    orderNumber: {
-        type: String,
-        required: false
-    },
-    orderId: {
-        type: String,
+    orderResponse: {
+        type: Object,
         required: false
     }
 })
