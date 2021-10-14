@@ -17,6 +17,14 @@ const tableSchema = new mongoose.Schema({
     totalCost: {
         type: String,
         required: true
+    },
+    orderNumber: {
+        type: String,
+        required: false
+    },
+    orderId: {
+        type: String,
+        required: false
     }
 })
 

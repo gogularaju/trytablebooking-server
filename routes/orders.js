@@ -16,6 +16,15 @@ router.get('/', async(req, res) => {
     }
 });
 
+router.get('/:id', async(req, res) => {
+    try {
+        const response = await Order.findById(req.params.id);
+        res.json(response);
+    } catch(e) {
+        res.send(e)
+    }
+});
+
 router.post('/new-order', async(req, res) => {
     try {
         const { status, tableNumber, orderItems, orderCost, orderDateTime } = req.body;
@@ -29,6 +38,20 @@ router.post('/new-order', async(req, res) => {
         });
         const response = await order.save();
         res.json(response);
+    } catch(e) {
+        res.send(e)
+    }
+});
+
+router.patch('/:id', async(req, res) => {
+    try {
+        const order = await Order.findById(req.params.id);
+        table.orderItems = req.body.orderItems;
+        table.orderCost = req.body.totalCost;
+        table.orderDateTime = req.body.orderDateTime;
+        
+        const result = await order.save();
+        res.json(result);
     } catch(e) {
         res.send(e)
     }
