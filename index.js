@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const { baseURL, restURL, database } = require('./config');
 
 //Import routers
@@ -39,6 +40,9 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
+
+app.use(cors());
+app.options('*', cors());
 
 //Routers
 //app.use('/', TableRoute);
