@@ -46,9 +46,9 @@ router.post('/new-order', async(req, res) => {
 router.patch('/:id', async(req, res) => {
     try {
         const order = await Order.findById(req.params.id);
-        table.orderItems = req.body.orderItems;
-        table.orderCost = req.body.totalCost;
-        table.orderDateTime = req.body.orderDateTime;
+        order.orderItems = req.body.orderItems;
+        order.orderCost = req.body.orderCost;
+        order.orderDateTime = req.body.orderDateTime;
         
         const result = await order.save();
         res.json(result);
